@@ -6,42 +6,39 @@
  */
 
 #include <iostream>
+#include <cstdlib>
+
+const int ZERO = 0;
 using namespace std;
 
-int main ()
+int main()
 {
-	int sum = 0;
-	int num;
+int target;
+int count;
+int sum = 0;
+cout << "This program asks the user for a positive integer value." <<endl
+<< "then it will sum of all the integers from 1 up to the number entered."<<endl<<endl;
 
-	
-	cout << "Enter a number greater than 0.\n";
-		cin >> num;
-	
-		
-	for (int counter = 0; counter <= num; counter++)
-	
-	{	
-		
-		sum = sum + num;
-		
-		counter++;
-	}
-	
+cout << "Enter a positive integer value: " <<endl;
+cin >> target;
 
-	if (num < 1)
-		
-	{
-			cout << "\n" << num << " is an invalid input.";
-			cout << " The program will now terminate.\n";
-		
-	}
-	
-	else
+if (target > ZERO)
+{
+count = 1;
+while (count <= target)
+{
+sum += count;
+count++;
+}
+}
 
-	
-	cout << "\nThe sum of numbers 1 - " << num
-			 << " " << "is " << sum << endl;
-		
-	
-	return 0;
-	}
+else
+{
+cout << "You did not enter a positive integer value. Restart and try again.";
+exit(0);
+}
+
+cout << "The sum of all the integers from 1 up to " << target <<" is: " << sum << endl;
+
+return 0;
+}
